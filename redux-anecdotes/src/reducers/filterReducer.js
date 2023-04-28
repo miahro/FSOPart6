@@ -2,15 +2,15 @@ const initialFilter = ''
 
 const filterReducer = (state = initialFilter, action) => {
   switch (action.type) {
-    case 'SET_FILTER':
-      return action.payload
-    default:
-      return state
+  case 'SET_FILTER':
+    return action.payload
+  default:
+    return state
   }
 }
 
 export const filterChange = filter => {
-    return {
+  return {
     type: 'SET_FILTER',
     payload: filter
   }
