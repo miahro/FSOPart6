@@ -8,6 +8,7 @@ const NewAnecdote = () => {
     event.preventDefault()
     const content = event.target.anecdote.value
     event.target.anecdote.value = ''
+    console.log('module NewAnecdote calling dispatch newAnecdote reducers with content', content)
     dispatch(newAnecdote(content))
   }
 

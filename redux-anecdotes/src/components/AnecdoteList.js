@@ -36,7 +36,6 @@ const AnecdoteList = () => {
         )}
     </div>
 
-  //console.log('Anecdotes to Show: ',anecdotesToShow)
   return (
     <div>
       <div>
