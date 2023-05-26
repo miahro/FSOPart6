@@ -1,17 +1,29 @@
 import { createSlice } from '@reduxjs/toolkit'
 
+//this initial value is bit unnecessary, but left it to comply with 6.12
 const initialNotification = 'Initial value of notification'
 
 const notificationSlice = createSlice({
   name: 'notification',
   initialState: initialNotification,
   reducers: {
-    notificationChange(state, action) {
-      console.log('notification reducer with state and action', state, action)
-      return state
+    hideNotification(state, action) {
+      console.log('Notification hide with state and action', state, action)
+      return ''
+    },
+    showNotification(state,action) {
+      console.log('Notification show with state and action, ', state, action)
+      return action.payload
     }
   }
 })
 
-export const { notificationChange } = notificationSlice.actions
+export const { hideNotification, showNotification } = notificationSlice.actions
 export default notificationSlice.reducer
+
+export const setNotification = (message) => {
+  return dispatch => {
+    dispatch(showNotification(message))
+    setTimeout(() => dispatch(hideNotification()), 5000)
+  }
+}

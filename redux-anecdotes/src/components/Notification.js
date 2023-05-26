@@ -6,6 +6,11 @@ const Notification = () => {
     padding: 10,
     borderWidth: 1
   }
+  console.log('Notification component, notification', notification)
+  if (notification === '') {
+    console.log('notification null')
+    return null
+  }
   return (
     <div style={style}>
       {notification}
