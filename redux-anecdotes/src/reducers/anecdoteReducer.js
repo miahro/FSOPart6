@@ -15,11 +15,10 @@ const anecdoteSlice = createSlice({
     },
     newAnecdote(state, action){
       console.log('in anecdote reducer action.payload.content', action.payload)
-      //const addedAnecdote =asObject(action.payload)
       const addedAnecdote = action.payload
-      state = [...state, addedAnecdote]
-      //state.push(addedAnecdote)
-      return state.map(anecdote => anecdote.id !== addedAnecdote.id ? anecdote: addedAnecdote)
+      //state = [...state, addedAnecdote]
+      state.push(addedAnecdote)
+      //return state.map(anecdote => anecdote.id !== addedAnecdote.id ? anecdote: addedAnecdote)
     },
     setAnecdotes(state, action) {
       return action.payload
