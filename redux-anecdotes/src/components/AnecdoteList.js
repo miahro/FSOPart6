@@ -4,13 +4,13 @@ import { setNotification } from '../reducers/notificationReducer'
 
 
 const AnecdoteList = () => {
-  console.log('AnecdoteList')
+  //console.log('AnecdoteList')
   const anecdotes = useSelector(state => state.anecdotes)
   const anecdotesToSort = [...anecdotes]
-  console.log(anecdotes)
-  console.log(typeof anecdotes)
+  console.log('Component Anecdote list: ',anecdotes)
+  //console.log(typeof anecdotes)
   const filter = useSelector(state => state.filter)
-  console.log('filter: ', filter)
+  //console.log('filter: ', filter)
   const dispatch = useDispatch()
 
   const vote = (id) => {
